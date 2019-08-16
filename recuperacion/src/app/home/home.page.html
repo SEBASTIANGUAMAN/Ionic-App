@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Recuperación
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content padding>
+    <br>
+    <ion-label><b>Latitud:</b>{{latitude}} <br><br></ion-label>
+    <ion-label><b>Longitud:</b>{{longitude}} <br><br></ion-label>
+    <ion-label><b>Tiempo:</b>{{timestamp}} <br><br></ion-label><br />
+  </ion-content>
+
+  <ion-content >
+    <ion-row>
+      <ion-col>
+        <button ion-button full (click)="captureAudio()">Audio</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button full (click)="captureVideo()">Video</button>
+      </ion-col>
+    </ion-row>
+    <ion-list>
+      <ion-item *ngFor="let file of mediaFiles" tappable (click)="playFile(file)" text-wrap>
+          {{file.name}}
+          <p>
+            {{file.size/1000/1000 | number}} MB
+          </p>
+      </ion-item>
+    </ion-list>
+
+    <video controls autoplay #myvideo></video>
+  </ion-content>
+

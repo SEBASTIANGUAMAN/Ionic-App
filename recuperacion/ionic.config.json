@@ -1,0 +1,8 @@
+{
+  "name": "recuperacion",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "5d575ec4"
+}
